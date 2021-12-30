@@ -1,0 +1,15 @@
+name: Docker Testign
+
+on: [push]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v2
+    - run : echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+    - name: Build the Docker image
+      run: docker build -t test .
